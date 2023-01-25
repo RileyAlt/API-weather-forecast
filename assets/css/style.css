@@ -1,3 +1,17 @@
-.h1 {
+h1 {
+    text-align: right;
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+.temp{
     text-align: center;
-};
+}
+
+.wind{
+    text-align: center;
+} 
+
+.humidity {
+    text-align: center;
+}

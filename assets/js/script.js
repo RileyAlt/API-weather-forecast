@@ -1,9 +1,20 @@
 function getInfo(){
     const newCityInput = document.getElementById("cityInput");
     const locationThatWasEntered = newCityInput.value;
-
+    const currentWeather = document.getElementById("currentWeather")
 
     // Need to handle current day
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationThatWasEntered}&appid=bbd23e323602126e5a411dc50638f36a&units=imperial`)
+    .then(response => response.json())
+    // .then (data => displayCurrentWeather(data));
+
+
+    //Displaying Current weather data    
+    function displayCurrentWeather(data){
+        currentWeather.textContent = data.list.main.temp;
+    }
+
 
     //  This is to handle the NEXT 5 days
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${locationThatWasEntered}&appid=b89577d3c40314f88af7bb8b7f91a311&units=imperial`)
@@ -21,13 +32,15 @@ function getInfo(){
             dayOneAvgHum += weatherInfo.main.humidity;
         }
 
+        //this decides what number is going to be displayed
         dayOneAvgTmp = dayOneAvgTmp / 8.0;
         dayOneAvgWind = dayOneAvgWind / 8.0;
         dayOneAvgHum = dayOneAvgHum / 8.0;
 
-        document.getElementById("day1Temp").textContent = dayOneAvgTmp + "°";
-        document.getElementById("day1Wind").textContent = dayOneAvgWind + "MPH";
-        document.getElementById("day1Humidity").textContent = dayOneAvgHum + "%";
+        //Displays content on browser
+        document.getElementById("day1Temp").textContent = "Temp: " + dayOneAvgTmp + "°";
+        document.getElementById("day1Wind").textContent =  "Wind Spd: " + dayOneAvgWind + "MPH";
+        document.getElementById("day1Humidity").textContent = "Humidity: " + dayOneAvgHum + "%";
 
         var dayTwoAvgTmp = 0;
         var dayTwoAvgWind = 0;
@@ -43,9 +56,9 @@ function getInfo(){
         dayTwoAvgWind = dayTwoAvgWind / 8.0;
         dayTwoAvgHum = dayTwoAvgHum / 8.0;
 
-        document.getElementById("day2Temp").textContent = dayTwoAvgTmp + "°";
-        document.getElementById("day2Wind").textContent = dayTwoAvgWind + "MPH";
-        document.getElementById("day2Humidity").textContent = dayTwoAvgHum + "%";
+        document.getElementById("day2Temp").textContent = "Temp: " + dayTwoAvgTmp + "°";
+        document.getElementById("day2Wind").textContent =  "Wind Spd: " + dayTwoAvgWind + "MPH";
+        document.getElementById("day2Humidity").textContent = "Humidity: " + dayTwoAvgHum + "%";
 
         var dayThreeAvgTmp = 0;
         var dayThreeAvgWind = 0;
@@ -61,9 +74,9 @@ function getInfo(){
         dayThreeAvgWind = dayOneAvgWind / 8.0;
         dayThreeAvgHum = dayThreeAvgHum / 8.0;
 
-        document.getElementById("day3Temp").textContent = dayThreeAvgTmp + "°";
-        document.getElementById("day3Wind").textContent = dayThreeAvgWind + "MPH";
-        document.getElementById("day3Humidity").textContent = dayThreeAvgHum + "%";
+        document.getElementById("day3Temp").textContent = "Temp: " + dayThreeAvgTmp + "°";
+        document.getElementById("day3Wind").textContent =  "Wind Spd: " + dayThreeAvgWind + "MPH";
+        document.getElementById("day3Humidity").textContent = "Humidity: " + dayThreeAvgHum + "%";
 
         var dayFourAvgTmp = 0;
         var dayFourAvgWind = 0;
@@ -79,9 +92,9 @@ function getInfo(){
         dayFourAvgWind = dayFourAvgWind / 8.0;
         dayFourAvgHum = dayFourAvgHum / 8.0;
 
-        document.getElementById("day4Temp").textContent = dayFourAvgTmp + "°";
-        document.getElementById("day4Wind").textContent = dayFourAvgWind + "MPH";
-        document.getElementById("day4Humidity").textContent = dayFourAvgHum + "%";
+        document.getElementById("day4Temp").textContent = "Temp: " + dayFourAvgTmp + "°";
+        document.getElementById("day4Wind").textContent =  "Wind Spd: " + dayFourAvgWind + "MPH";
+        document.getElementById("day4Humidity").textContent = "Humidity: " + dayFourAvgHum + "%";
 
         var dayFiveAvgTmp = 0;
         var dayFiveAvgWind = 0;
@@ -97,33 +110,16 @@ function getInfo(){
         dayFiveAvgWind = dayFiveAvgWind / 8.0;
         dayFiveAvgHum = dayFiveAvgHum / 8.0;
 
-        document.getElementById("day5Temp").textContent = dayFiveAvgTmp + "°";
-        document.getElementById("day5Wind").textContent = dayFiveAvgWind + "MPH";
-        document.getElementById("day5Humidity").textContent = dayFiveAvgHum + "%";
-
-
-
-
-
-        // for (const weatherInfo of data.list) {
-        //     console.log(`At ${weatherInfo.dt_txt}, it is going to be ${weatherInfo.main.temp}`);
-        //     $('#dailyHigh').text(weatherInfo.main.temp_max);
-
-        //     var myNewTextElement = document.createElement('p');
-        //     myNewTextElement.textContent = weatherInfo.main.temp_max;
-
-
-        // }
-
-        // for(i=0;i<5;i++){
-        //     document.getElementById("day" +(i+1)+"temp").innerHTML = "temp:" +Number(data.list[i].main.temp -275.41).toFixed(1)+"°";
-        // }
-        
+        document.getElementById("day5Temp").textContent = "Temp: " + dayFiveAvgTmp + "°";
+        document.getElementById("day5Wind").textContent = "Wind Spd: " + dayFiveAvgWind + "MPH";
+        document.getElementById("day5Humidity").textContent = "Humidity: " + dayFiveAvgHum + "%";
+ 
     })
     .catch(err => alert("something went wrong"));
 
 }
 
+//getting the dates in
 // const d =new Date();
 // const weekday =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
