@@ -20,10 +20,14 @@ function getInfo(){
             dayOneAvgWind += weatherInfo.wind.speed;
             dayOneAvgHum += weatherInfo.main.humidity;
         }
+
         dayOneAvgTmp = dayOneAvgTmp / 8.0;
         dayOneAvgWind = dayOneAvgWind / 8.0;
         dayOneAvgHum = dayOneAvgHum / 8.0;
 
+        document.getElementById("day1Temp").textContent = dayOneAvgTmp + "°";
+        document.getElementById("day1Wind").textContent = dayOneAvgWind + "MPH";
+        document.getElementById("day1Humidity").textContent = dayOneAvgHum + "%";
 
         var dayTwoAvgTmp = 0;
         var dayTwoAvgWind = 0;
@@ -39,6 +43,10 @@ function getInfo(){
         dayTwoAvgWind = dayTwoAvgWind / 8.0;
         dayTwoAvgHum = dayTwoAvgHum / 8.0;
 
+        document.getElementById("day2Temp").textContent = dayTwoAvgTmp + "°";
+        document.getElementById("day2Wind").textContent = dayTwoAvgWind + "MPH";
+        document.getElementById("day2Humidity").textContent = dayTwoAvgHum + "%";
+
         var dayThreeAvgTmp = 0;
         var dayThreeAvgWind = 0;
         var dayThreeAvgHum = 0;
@@ -52,6 +60,10 @@ function getInfo(){
         dayThreeAvgTmp = dayOneAvgTmp / 8.0;
         dayThreeAvgWind = dayOneAvgWind / 8.0;
         dayThreeAvgHum = dayThreeAvgHum / 8.0;
+
+        document.getElementById("day3Temp").textContent = dayThreeAvgTmp + "°";
+        document.getElementById("day3Wind").textContent = dayThreeAvgWind + "MPH";
+        document.getElementById("day3Humidity").textContent = dayThreeAvgHum + "%";
 
         var dayFourAvgTmp = 0;
         var dayFourAvgWind = 0;
@@ -67,6 +79,10 @@ function getInfo(){
         dayFourAvgWind = dayFourAvgWind / 8.0;
         dayFourAvgHum = dayFourAvgHum / 8.0;
 
+        document.getElementById("day4Temp").textContent = dayFourAvgTmp + "°";
+        document.getElementById("day4Wind").textContent = dayFourAvgWind + "MPH";
+        document.getElementById("day4Humidity").textContent = dayFourAvgHum + "%";
+
         var dayFiveAvgTmp = 0;
         var dayFiveAvgWind = 0;
         var dayFiveAvgHum = 0;
@@ -80,6 +96,10 @@ function getInfo(){
         dayFiveAvgTmp = dayFiveAvgTmp / 8.0;
         dayFiveAvgWind = dayFiveAvgWind / 8.0;
         dayFiveAvgHum = dayFiveAvgHum / 8.0;
+
+        document.getElementById("day5Temp").textContent = dayFiveAvgTmp + "°";
+        document.getElementById("day5Wind").textContent = dayFiveAvgWind + "MPH";
+        document.getElementById("day5Humidity").textContent = dayFiveAvgHum + "%";
 
 
 
@@ -104,19 +124,19 @@ function getInfo(){
 
 }
 
-const d =new Date();
-const weekday =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// const d =new Date();
+// const weekday =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-function checkDay(day){
-    if(day +d.getDay() > 6){
-        return day +d.getDay()-7;
-    }
-    else {
-        return day +d.getDay();
-    }
-}
+// function checkDay(day){
+//     if(day +d.getDay() > 6){
+//         return day +d.getDay()-7;
+//     }
+//     else {
+//         return day +d.getDay();
+//     }
+// }
 
-for(i=0;i<5;i++){
-    document.getElementById("day"+(i+1)).innerHTML = weekday[checkDay(i)];
-}
+// for(i=0;i<5;i++){
+//     document.getElementById("day"+(i+1)).innerHTML = weekday[checkDay(i)];
+// }
 

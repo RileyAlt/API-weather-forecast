@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-    <header>
-        <h1> Weather Dashboard </h1>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather Forecast</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1> Weather Dashboard </h1>
+        </header>
 
-    <div id="location"> 
-        <div>
-            <h2 id="search"> Search for a City:</h2>
-            <p id="locationContainer">
-                <input type="text" id="cityInput"/>
-            </p>
-            <button onclick="getInfo()"> Click Me</button>
-            <h3 id="cityName"></h3>
-        </div> 
-    </div>
+        <div id="location"> 
+            <div>
+                <h2 id="search"> Search for a City:</h2>
+                <p id="locationContainer">
+                    <input type="text" id="cityInput"/>
+                </p>
+                <button onclick="getInfo()"> Click Me</button>
+                <h3 id="cityName"></h3>
+            </div> 
+        </div>
 
-    <div id="weatherContainer">
-        <div id="iconsContainer">
-            <div class="icons">
-                <p class="weather" id="day1"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img1" alt=""></div>
-                <p class="temp" id="day1Temp"> trying to find</p>
-                <p class="wind" id="day1Wind"> trying to find</p>
-                <p class="humidity" id="day1Humidity"> trying to find</p>
-            </div>
-            <div class="icons">
-                <p class="weather" id="day2"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img2" alt=""></div>
-                <p class="temp" id="day2Temp"> trying to find</p>
-                <p class="wind" id="day2Wind"> trying to find</p>
-                <p class="humidity" id="day2Humidity"> trying to find</p>
-            </div>
-            <div class="icons">
-                <p class="weather" id="day3"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img3" alt=""></div>
-                <p class="temp" id="day3Temp"> trying to find</p>
-                <p class="wind" id="day3Wind"> trying to find</p>
-                <p class="humidity" id="day3Humidity"> trying to find</p>
-            </div>
-            <div class="icons">
-                <p class="weather" id="day4"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img4" alt=""></div>
-                <p class="temp" id="day4Temp"> trying to find</p>
-                <p class="wind" id="day4Wind"> trying to find</p>
-                <p class="humidity" id="day4Humidity"> trying to find</p>
-            </div>
-            <div class="icons">
-                <p class="weather" id="day5"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img5" alt=""></div>
-                <p class="temp" id="day5Temp"> trying to find</p>
-                <p class="wind" id="day5Wind"> trying to find</p>
-                <p class="humidity" id="day5Humidity"> trying to find</p>
+        <div id="weatherContainer">
+            <div class="todays-weather">
+
+                <div class="next-few-days-weather">
+                    <div class="next-few-days-day-detail">
+                    <p class="next-few-days-date" id="day1Date"></p>
+                    <img class="weather-icon" id="day1Icon"/>
+                    <p class="temp" id="day1Temp"></p>
+                    <p class="wind" id="day1Wind"></p>
+                    <p class="humidity" id="day1Humidity"></p>
+                </div>
+
+                <div class="next-few-days--day-detail">
+                    <p class="next-few-days-date" id="day2Date"></p>
+                    <img class="weather-icon" id="day2Icon"/>
+                    <p class="temp" id="day2Temp"></p>
+                    <p class="wind" id="day2Wind"></p>
+                    <p class="humidity" id="day2Humidity"></p>
+                </div>
+
+                <div class="next-few-days-weather">
+                    <div class="next-few-days-day-detail">
+                    <p class="next-few-days-date" id="day3Date"></p>
+                    <img class="weather-icon" id="day3Icon"/>
+                    <p class="temp" id="day3Temp"></p>
+                    <p class="wind" id="day3Wind"></p>
+                    <p class="humidity" id="day3Humidity"></p>
+                </div>
+
+                <div class="next-few-days--day-detail">
+                    <p class="next-few-days-date" id="day4Date"></p>
+                    <img class="weather-icon" id="day4Icon"/>
+                    <p class="temp" id="day4Temp"></p>
+                    <p class="wind" id="day4Wind"></p>
+                    <p class="humidity" id="day4Humidity"></p>
+                </div>
+
+                <div class="next-few-days-day-detail">
+                    <p class="next-few-days-date" id="day5Date"></p>
+                    <img class="weather-icon" id="day5Icon"/>
+                    <p class="temp" id="day5Temp"></p>
+                    <p class="wind" id="day5Wind"></p>
+                    <p class="humidity" id="day5Humidity"></p>
+                </div>
+
             </div>
         </div>
-    </div>
-
-    
-    <script src="./assets/js/script.js"></script>
-</body>
+        
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
